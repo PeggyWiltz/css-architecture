@@ -1,0 +1,77 @@
+/*  Elements */
+body {
+  font-family: Tahoma, Geneva, sans-serif;
+  background-color: #FFF;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  color: #29630C;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.75em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+h4 {
+  font-size: 1.25em;
+}
+
+h5 {
+  font-size: 1em;
+}
+
+h6 {
+  font-size: .75em;
+}
+
+/* Navigation */
+.menu__bar {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+  background-color: #998B65;
+}
+
+.menu {
+padding: 8px 0px;
+margin: 0px;
+}
+
+.menu__item {
+  display: inline;
+  padding: 20px;
+}
+
+.menu__item--link {
+  text-decoration: none;
+  color: #D14C28;
+  padding: 8px 8px 8px 8px;
+}
+
+.menu__item--link:hover {
+    color: #505057;
+    background-color: #FFFEE3;
+}
+
+/*Buttons*/
+.btn {
+  padding: 8px 2px;
+  margin: 0px;
+}
+
+.btn--primary {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+  background-color: #D14C28;
+  color: #FFFEE3;
+}
