@@ -1,0 +1,58 @@
+
+/* Navigation */
+.menu__bar {
+  text-align: center;
+  margin-bottom: 1.5em;
+}
+
+.menu {
+padding: 8px;
+}
+
+.menu__item {
+  display: inline;
+  padding: 20px;
+}
+
+.menu__item--link {
+  padding: 8px 8px 8px 8px;
+}
+
+/* Item */
+.item {
+  padding: 3px;
+  overflow: auto;  /*caveat: */
+  border: solid;
+}
+
+.item__image {
+  float: left;
+  margin: 3px 8px 3px 3px;
+}
+
+.item__image > img {
+  display: block;
+  height: 300px;
+  width: 200px;
+}
+
+.item__detail--description {
+  padding: 1px;
+}
+
+.item__details--icons {
+  margin-top: 20px;
+  margin-bottom: 6px;
+}
+
+.item__details--icon {
+  display: inline;
+  padding: 8px;
+}
+
+.circle {
+  border-radius: 50%;
+  /*behavior: url(PIE.htc);   supports IE8 */
+  padding: 8px;
+}
+

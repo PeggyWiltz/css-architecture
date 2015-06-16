@@ -4,7 +4,9 @@
 	<meta charset="utf-8">
 	<title>Modular Design</title>
   <link rel="stylesheet" href="css/reset.css">
-	<link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/style.css">
 	<!--[if IE]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
@@ -12,13 +14,6 @@
 
 <body id="home">
 	<h1>Modular Design</h1>
-
-   <h1>h1</h1>
-   <h2>h2</h2>
-   <h3>h3</h3>
-   <h4>h4</h4>
-   <h5>h5</h5>
-   <h6>h6</h6>
 
   <nav role="navigation" class="menu__bar">
     <ul class="menu">
@@ -36,7 +31,49 @@
       </li>
     </ul>
   </nav>
-  <button class="btn btn--primary">Primary Button</button>
+  <article class="item" id="bottle1">
+    <section class="item__image">
+      <img src="images/bottle1.JPG" alt="" />
+    </section>
+      <ul class="item__details">
+      <li class="item__detail">
+        <h3>The Magician</h3>
+      </li>
+      <li class="item__detail">Sleight of Hand, Walla Walla, WA</li>
+      <li class="item__detail--year">2013</li>
+      <li class="item__detail">100% Cab Sauv</li>
+      <li class="item__detail">
+        <label>Purchased </label>
+        <label id="bottle1-purch-where">Walla Walla </label>
+        <label id="bottle1-purch-when">April 2015</label>
+      </li>
+      <li class="item__detail">$29.00</li>
+      <li class="item__detail item__detail--description">We bought this in Walla Walla during a trip with Carrie and Chuck. The picture on the label is of NPH, who is a wine-club member.</li>
+    </ul>
+    <ul class="item__details--icons">
+      <li class="item__details--icon">
+        <span class="circle item__detail--wine-type-red">aa</span>
+      </li>
+      <li class="item__details--icon">
+        <span class="circle item__detail--number-circle">12</span>
+      </li>        
+      <li class="item__details--icon item__detail--icon-large">
+        <span class="icon-star-empty">
+				</span>
+      <li class="item__details--icon item__detail--icon-large">
+        <span class="icon-glass">
+				</span>
+      </li>    
+      </li>     
+    </ul>
+  </article>
 
+
+   <h1>h1</h1>
+   <h2>h2</h2>
+   <h3>h3</h3>
+   <h4>h4</h4>
+   <h5>h5</h5>
+   <h6>h6</h6>
 </body>
 </html>
