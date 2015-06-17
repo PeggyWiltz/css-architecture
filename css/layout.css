@@ -41,7 +41,7 @@ padding: 8px;
 }
 
 .item__details--icons {
-  height: 60px;
+  margin: 10px 0px 10px;
 }
 
 .item__details--icon {

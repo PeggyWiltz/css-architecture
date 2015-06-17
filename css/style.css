@@ -30,47 +30,39 @@ margin: 0px;
 
 /* Item */
 .item {
-  border: solid 20px #6D5691;
+  border-top: solid 20px #6D5691;
   background-color: #FFFEE3;
 }
 
 .item__detail {
-  color: red; /*#505057;*/
+  color: #505057;
   font-size: 20px;
   font-weight: bold;
 }
 
-.item__detail--description {
-  /* nothing yet */
-
+.item__detail--title {
+  font-size: 1.75em;
+  color: #29630C;
 }
 
-.item__details--icons {
+.item__detail--description {
+  /* nothing yet */
 }
 
 .item__detail--icon-large {
   padding-top: 8px;
   font-size: 35px;
 }
-.item__detail--wine-type {
 
-}
-
-.item__detail--wine-type-red {
-  display: inline;
-  background: DarkRed;
+.item__detail--red-wine {
   color: DarkRed;
 }
 
-.item__detail--wine-type-white {
-  display: inline;
-  background: LightGoldenrodYellow;
+.item__detail--white-wine {
   color: LightGoldenrodYellow;
 }
 
-.item__detail--wine-type-rose {
-  display: inline;
-  background: LightPink;
+.item__detail--rose-wine {
   color: LightPink;
 }
 
