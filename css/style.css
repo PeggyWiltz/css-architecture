@@ -36,7 +36,8 @@ margin: 0px;
 
 .item__detail {
   color: red; /*#505057;*/
-  font-size: 16px;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .item__detail--description {

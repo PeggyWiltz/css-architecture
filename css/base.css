@@ -1,5 +1,5 @@
 body {
-  font-family: Tahoma, Geneva, sans-serif;
+  font-family: Bellota, Geneva, sans-serif;
   background-color: #FFF;
 }
 
@@ -22,7 +22,7 @@ body {
 	font-weight: normal;
 	font-variant: normal;
 	text-transform: none;
-	line-height: .5;
+	line-height: 1;
 
 	/* Better Font Rendering =========== */
 	-webkit-font-smoothing: antialiased;
@@ -43,6 +43,32 @@ body {
 }
 .icon-star-empty:before {
 	content: "\e9d7";
+}
+
+/* Fonts */
+@font-face {
+     font-family: 'Bellota';
+     src: url('../fonts/bellota/Bellota-Regular.otf') format('opentype');
+     font-weight: normal;
+     font-style: normal;
+}
+@font-face {
+     font-family: 'Bellota';
+     src: url('../fonts/bellota/Bellota-Italic.otf') format('opentype');
+     font-weight: normal;
+     font-style: italic;
+}
+@font-face {
+     font-family: 'Bellota';
+     src: url('../fonts/bellota/Bellota-Bold.otf') format('opentype');
+     font-weight: bold;
+     font-style: normal;
+}
+@font-face {
+     font-family: 'Bellota';
+     src: url('../fonts/bellota/Bellota-BoldItalic.otf') format('opentype');
+     font-weight: bold;
+     font-style: italic;
 }
 
 /*  Elements */

@@ -41,8 +41,7 @@ padding: 8px;
 }
 
 .item__details--icons {
-  margin-top: 20px;
-  margin-bottom: 6px;
+  height: 60px;
 }
 
 .item__details--icon {
@@ -53,6 +52,6 @@ padding: 8px;
 .circle {
   border-radius: 50%;
   /*behavior: url(PIE.htc);   supports IE8 */
-  padding: 8px;
+  padding: 12px;
 }
 
