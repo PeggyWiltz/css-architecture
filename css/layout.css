@@ -36,8 +36,17 @@ padding: 8px;
   width: 200px;
 }
 
-.item__detail--description {
+.item__detail {
   padding: 1px;
+  margin: .25em;
+}
+
+.item__detail--title {
+  margin-bottom: .75em;
+}
+
+.item__details--hidden {
+  display: none;
 }
 
 .item__details--icons {
@@ -47,6 +56,11 @@ padding: 8px;
 .item__details--icon {
   display: inline;
   padding: 8px;
+}
+
+.item__detail--icon-large {
+  padding-top: 8px;
+  font-size: 1.66em;
 }
 
 .circle {

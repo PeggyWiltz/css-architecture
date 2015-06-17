@@ -36,7 +36,7 @@ margin: 0px;
 
 .item__detail {
   color: #505057;
-  font-size: 20px;
+  font-size: 1em;
   font-weight: bold;
 }
 
@@ -45,13 +45,12 @@ margin: 0px;
   color: #29630C;
 }
 
-.item__detail--description {
-  /* nothing yet */
+.item__detail--year {
+  font-size: 1.2em;
 }
 
-.item__detail--icon-large {
-  padding-top: 8px;
-  font-size: 35px;
+.item__detail--description {
+  /* nothing yet */
 }
 
 .item__detail--red-wine {
@@ -64,6 +63,16 @@ margin: 0px;
 
 .item__detail--rose-wine {
   color: LightPink;
+}
+
+.item__details--icon-link {
+  color: #505057;
+  text-decoration: none;
+}
+
+.item__details--icon-link:hover {
+  color: #C2AFDE;
+  text-decoration: none;
 }
 
 .item__detail--number-circle {
