@@ -1,0 +1,39 @@
+
+/* Header */
+
+/* Navigation */
+.menu__item--link:hover {
+  background-color: #79DBDE;
+  color: #505E5E;
+}
+
+/* Filters */
+.filter-menu__button:hover {
+  background-color: #79DBDE;
+  color: #5DA9AB;
+}
+
+.filter-menu__button:active {
+  background-color: #C0E2E3;
+  color: #505E5E;
+}
+
+
+/* Item */
+.item__detail--red-wine {
+  color: DarkRed;
+}
+
+.item__detail--white-wine {
+  color: LightGoldenrodYellow;
+}
+
+.item__detail--rose-wine {
+  color: LightPink;
+}
+
+/*  Icons */
+.item__details--icon-link:hover {
+  color: #79DBDE;
+  text-decoration: none;
+}

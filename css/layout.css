@@ -1,0 +1,132 @@
+/* Header */
+.header__text {
+  min-height: 6em;
+}
+.header__title {
+  float: left;
+}
+
+.header__quote {
+  float: right;
+}
+
+/* Navigation */
+.menu__bar {
+  text-align: center;
+  margin-bottom: 1.5em;
+}
+
+.menu {
+padding: 8px;
+margin: 0px;
+}
+
+.menu__item {
+  display: inline;
+  padding: 20px;
+}
+
+.menu__item--link {
+  padding: 8px 8px 8px 8px;
+}
+
+/* Filters */
+
+.filters {
+  text-align: center;
+  margin-bottom: 1.5em;
+}
+
+.filter-menu {
+  padding: 1em;
+}
+
+.filter-menu__item {
+  display: inline;
+  padding: 20px;
+}
+
+.filter-menu__input {
+  height: 2em;
+  width: 15em;
+}
+
+.filter-menu__button {
+  clear: both;
+  padding: 8px;
+}
+
+/* Item */
+.item {
+  padding: 3px;
+  overflow: auto;  /*caveat: */
+}
+
+.item__image {
+  float: left;
+  margin: 3px 8px 3px 3px;
+}
+
+.item__image > img {
+  display: block;
+  height: 300px;
+  width: 200px;
+}
+
+.item__detail {
+  padding: 1px;
+  margin: .25em;
+}
+
+.item__detail--title {
+  margin-bottom: .75em;
+}
+
+.item__details--hidden {
+  display: none;
+}
+
+.item__details--icons {
+  margin: 10px;
+}
+
+.item__details--icon {
+  display: inline;
+  padding: 8px;
+}
+
+.item__detail--icon-large {
+  padding-top: 8px;
+  font-size: 1.66em;
+}
+
+.who-is {
+  clear:both;
+}
+
+.who-is__pic {
+  float: left;
+}
+
+.who-is__pic > img {
+  display: block;
+}
+
+.who-is__person {
+  display: inline;
+}
+
+.who-is__person-detail {
+  margin: .5em;
+}
+
+.copyright {
+  padding: .5em;
+}
+
+.circle {
+  border-radius: 50%;
+  /*behavior: url(PIE.htc);   supports IE8 */
+  padding: 12px;
+}
+
