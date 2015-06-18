@@ -1,3 +1,14 @@
+/* Header */
+.header__text {
+  min-height: 6em;
+}
+.header__title {
+  float: left;
+}
+
+.header__quote {
+  float: right;
+}
 
 /* Navigation */
 .menu__bar {
@@ -7,6 +18,7 @@
 
 .menu {
 padding: 8px;
+margin: 0px;
 }
 
 .menu__item {
@@ -34,8 +46,14 @@ padding: 8px;
   padding: 20px;
 }
 
-.filter-menu__btn {
+.filter-menu__input {
+  height: 2em;
+  width: 15em;
+}
+
+.filter-menu__button {
   clear: both;
+  padding: 8px;
 }
 
 /* Item */
@@ -69,7 +87,7 @@ padding: 8px;
 }
 
 .item__details--icons {
-  margin: 10px 0px 10px;
+  margin: 10px;
 }
 
 .item__details--icon {
@@ -96,7 +114,6 @@ padding: 8px;
 
 .who-is__person {
   display: inline;
-  margin-top: 1em;
 }
 
 .who-is__person-detail {

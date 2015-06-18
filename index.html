@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="css/base.css">
 	<link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/state.css">
 	<!--[if IE]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
@@ -14,29 +15,37 @@
 
 <body id="home">
   <header>
-    <h1>Wine Counting</h1>
+    <article class="header__text">
+      <section  class="header__title">
+        <h1>Wine Counting</h1>
+      </section>
+      <section class="header__quote">
+        <h2 class="header__quote-body">“I cook with wine, sometimes I even add it to the food.” </h2>
+        <h3 class="header__quote-author">― W.C. Fields</h3>
+      </section>
+    </article>    
     <nav role="navigation" class="menu__bar">
       <ul class="menu">
         <li class="menu__item">
-          <a href="index.html" class="menu__item--link">Home</a>
+          <a href="#" class="menu__item--link">Home</a>
         </li>
         <li class="menu__item">
-          <a href="services.html" class="menu__item--link">Services</a>
+          <a href="#" class="menu__item--link">Services</a>
         </li>
         <li class="menu__item">
-          <a href="contact.html" class="menu__item--link">Contact Us</a>
+          <a href="#" class="menu__item--link">Contact Us</a>
         </li>
         <li class="menu__item">
-          <a href="about.html" class="menu__item--link">About</a>
+          <a href="#" class="menu__item--link">About</a>
         </li>
       </ul>
     </nav>
   </header>
-  <form class="filters">
+  <form class="menu__bar filters">
     <ul class="filter-menu">
       <li class="filter-menu__item">
        <label labelFor="filter-color">Color: </label>
-       <select id="filter-color" name="color">
+       <select class="filter-menu__input" id="filter-color" name="color">
         <option value="red" selected>Red</option>
         <option value="white">White</option>
         <option value="rose">Rose</option>
@@ -44,14 +53,14 @@
       </li>
       <li class="filter-menu__item">
         <label labelFor="filter-winery">Winery name: </label>
-        <input type="text">
+        <input class="filter-menu__input" type="text">
       </li>
       <li class="filter-menu__item">
         <label labelFor="filter__vintage">Vintage: </label>
-        <input id="filter__vintage" type="number" placeholder="2015">
+        <input class="filter-menu__input" id="filter__vintage" type="number" placeholder="2015">
       </li>
       <li class="filter-menu__item">
-        <button name="filter-menu__btn" class="filter-menu__button">Filter</button>
+        <button class="filter-menu__button" name="filter-menu__btn" >Filter</button>
       </li>
     </ul>
   </form>

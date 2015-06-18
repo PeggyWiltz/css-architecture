@@ -4,34 +4,46 @@ body {
   font-size: 20px;
 }
 
+/* elements */
+h1,h2,h3,h4,h5,h6 {
+  color: #5DA9AB;
+}
+
+/* Header */
+.header__quote-author {
+  font-style: italic;
+}
+
 /* Navigation */
 .menu__bar {
   font-size: 1.5em;
   font-weight: bold;
-  text-align: center;
   background-color: #345D5E;
-  margin-bottom: 1.5em;
-}
-
-.menu {
-padding: 8px 0px;
-margin: 0px;
-}
-
-.menu__item {
-  display: inline;
-  padding: 20px;
 }
 
 .menu__item--link {
   text-decoration: none;
   color:  #C0E2E3;
-  padding: 8px 8px 8px 8px;
 }
 
-.menu__item--link:hover {
-    color: #505E5E;
-    background-color: #79DBDE;
+/* Filters */
+.filters {
+  background-color: #5DA9AB;
+}
+
+.filter-menu__item {
+  color: #505E5E;
+}
+
+.filter-menu__input {
+  font: inherit;
+  font-size: smaller;
+}
+
+.filter-menu__button {
+  font: inherit;
+  background-color: #345D5E;
+  color: #C0E2E3;
 }
 
 /* Item */
@@ -54,30 +66,8 @@ margin: 0px;
   font-size: 1.2em;
 }
 
-.item__detail--description {
-  /* nothing yet */
-}
-
-.item__detail--red-wine {
-  color: DarkRed;
-}
-
-.item__detail--white-wine {
-  color: LightGoldenrodYellow;
-}
-
-.item__detail--rose-wine {
-  color: LightPink;
-}
-
 /*  Icons */
-
 .item__details--icon-link {
   color: #000;
-  text-decoration: none;
-}
-
-.item__details--icon-link:hover {
-  color: #79DBDE;
   text-decoration: none;
 }
