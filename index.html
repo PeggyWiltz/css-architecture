@@ -13,24 +13,48 @@
 </head>
 
 <body id="home">
-	<h1>Modular Design</h1>
-
-  <nav role="navigation" class="menu__bar">
-    <ul class="menu">
-      <li class="menu__item">
-        <a href="index.html" class="menu__item--link">Home</a>
+  <header>
+    <h1>Wine Counting</h1>
+    <nav role="navigation" class="menu__bar">
+      <ul class="menu">
+        <li class="menu__item">
+          <a href="index.html" class="menu__item--link">Home</a>
+        </li>
+        <li class="menu__item">
+          <a href="services.html" class="menu__item--link">Services</a>
+        </li>
+        <li class="menu__item">
+          <a href="contact.html" class="menu__item--link">Contact Us</a>
+        </li>
+        <li class="menu__item">
+          <a href="about.html" class="menu__item--link">About</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <form class="filters">
+    <ul class="filter-menu">
+      <li class="filter-menu__item">
+       <label labelFor="filter-color">Color: </label>
+       <select id="filter-color" name="color">
+        <option value="red" selected>Red</option>
+        <option value="white">White</option>
+        <option value="rose">Rose</option>
+      </select>
       </li>
-      <li class="menu__item">
-        <a href="services.html" class="menu__item--link">Services</a>
+      <li class="filter-menu__item">
+        <label labelFor="filter-winery">Winery name: </label>
+        <input type="text">
       </li>
-      <li class="menu__item">
-        <a href="contact.html" class="menu__item--link">Contact Us</a>
+      <li class="filter-menu__item">
+        <label labelFor="filter__vintage">Vintage: </label>
+        <input id="filter__vintage" type="number" placeholder="2015">
       </li>
-      <li class="menu__item">
-        <a href="about.html" class="menu__item--link">About</a>
+      <li class="filter-menu__item">
+        <button name="filter-menu__btn" class="filter-menu__button">Filter</button>
       </li>
     </ul>
-  </nav>
+  </form>
   <main>
     <article class="item" id="bottle1">
       <figure class="item__image">
@@ -38,14 +62,20 @@
       </figure>
         <ul class="item__details">
         <li class="item__detail--title">
-          <h3>The Magician</h3>
+          <h3>The Conjurer</h3>
         </li>
+        <!-- icon legend:
+                icon-droplet = wine color (red, white, rose)
+                number = how many bottles we have
+                icon-star-empty = we are wine club members (if present)
+                icon-glass = wine is ready to drink (if present)
+        -->
         <ul class="item__details--icons">
         <li class="item__details--icon item__detail--icon-large">
           <span class="icon-droplet item__detail--red-wine"></span>
         </li>
         <li class="item__details--icon item__detail--icon-large">
-          <span class="">12</span>
+          <span class="">1</span>
         </li>
         <li class="item__details--icon item__detail--icon-large">
           <span class="icon-star-empty">
@@ -58,7 +88,7 @@
       </ul>
         <li class="item__detail">Sleight of Hand, Walla Walla, WA</li>
         <li class="item__detail item__detail--year">2013</li>
-        <li class="item__detail">100% Cab Sauv</li>
+        <li class="item__detail">60% Cab Sauv, 25% Cab Franc, 15% Merlot</li>
         <li class="item__detail">
           <label>Purchased </label>
           <label id="bottle1-purch-where">Walla Walla </label>
@@ -82,7 +112,7 @@
   </main>
   <footer class="who-is" itemscope itemtype="http://schema.org/Person">
     <figure class="who-is__pic">
-      <img src="images/pegLogo.jpg"/>
+      <img src="images/pegCartoon.jpg"/>
     </figure>
     <ul class="who-is__person">
       <li class="who-is__person-detail" itemprop="name">
@@ -105,23 +135,26 @@
           <span class="icon-facebook2"></span>
         </a>
       </li>
-      <li class="item__details--icon item__detail--icon-large">
+      <li class="item__details--icon item__detail--icon-large"  itemprop="memberOf">
+        <span class="item__details--hidden" >Twitter</span>
         <a class="item__details--icon-link" href="http://www.twitter.com">
           <span class="icon-twitter2"></span>
         </a>
       </li>
-      <li class="item__details--icon item__detail--icon-large">
+      <li class="item__details--icon item__detail--icon-large"  itemprop="memberOf">
+        <span class="item__details--hidden" >GitHub</span>
         <a class="item__details--icon-link" href="http://www.github.com">
           <span class="icon-github"></span>
         </a>
       </li>
-      <li class="item__details--icon item__detail--icon-large">
+      <li class="item__details--icon item__detail--icon-large"  itemprop="memberOf">
+        <span class="item__details--hidden" >LinkedIn</span>
         <a class="item__details--icon-link" href="http://www.linkedIn.com">
           <span class="icon-linkedin"></span>
         </a>
       </li>
     </ul>
-    <small class="copyright">&copy; Peggy Wiltz 2015</small>
+    <div class="copyright"><small>&copy; Peggy Wiltz 2015</small></div>
   </footer>
 </body>
 </html>

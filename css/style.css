@@ -1,9 +1,15 @@
+body {
+  font-family: Bellota, Geneva, sans-serif;
+  background-color: #FFF;
+  font-size: 20px;
+}
+
 /* Navigation */
 .menu__bar {
   font-size: 1.5em;
   font-weight: bold;
   text-align: center;
-  background-color: #C2AFDE;
+  background-color: #345D5E;
   margin-bottom: 1.5em;
 }
 
@@ -19,30 +25,29 @@ margin: 0px;
 
 .menu__item--link {
   text-decoration: none;
-  color: #D14C28;
+  color:  #C0E2E3;
   padding: 8px 8px 8px 8px;
 }
 
 .menu__item--link:hover {
-    color: #505057;
-    background-color: #FFFEE3;
+    color: #505E5E;
+    background-color: #79DBDE;
 }
 
 /* Item */
 .item {
-  border-top: solid 20px #6D5691;
-  background-color: #FFFEE3;
+  border-top: solid 20px #345D5E;
+  background-color: #C0E2E3;
 }
 
 .item__detail {
-  color: #505057;
   font-size: 1em;
   font-weight: bold;
 }
 
 .item__detail--title {
   font-size: 1.75em;
-  color: #29630C;
+  color: #5DA9AB;
 }
 
 .item__detail--year {
@@ -65,20 +70,14 @@ margin: 0px;
   color: LightPink;
 }
 
+/*  Icons */
+
 .item__details--icon-link {
-  color: #505057;
+  color: #000;
   text-decoration: none;
 }
 
 .item__details--icon-link:hover {
-  color: #C2AFDE;
+  color: #79DBDE;
   text-decoration: none;
-}
-
-.item__detail--number-circle {
-  display: inline;
-  background: #505057;
-  color: #FFFEE3;
-  text-align: center;
-  font-weight: bold;
 }

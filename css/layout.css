@@ -18,11 +18,30 @@ padding: 8px;
   padding: 8px 8px 8px 8px;
 }
 
+/* Filters */
+
+.filters {
+  text-align: center;
+  margin-bottom: 1.5em;
+}
+
+.filter-menu {
+  padding: 1em;
+}
+
+.filter-menu__item {
+  display: inline;
+  padding: 20px;
+}
+
+.filter-menu__btn {
+  clear: both;
+}
+
 /* Item */
 .item {
   padding: 3px;
   overflow: auto;  /*caveat: */
-  border: solid;
 }
 
 .item__image {
@@ -61,6 +80,31 @@ padding: 8px;
 .item__detail--icon-large {
   padding-top: 8px;
   font-size: 1.66em;
+}
+
+.who-is {
+  clear:both;
+}
+
+.who-is__pic {
+  float: left;
+}
+
+.who-is__pic > img {
+  display: block;
+}
+
+.who-is__person {
+  display: inline;
+  margin-top: 1em;
+}
+
+.who-is__person-detail {
+  margin: .5em;
+}
+
+.copyright {
+  padding: .5em;
 }
 
 .circle {
