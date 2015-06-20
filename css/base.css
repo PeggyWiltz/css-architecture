@@ -1,3 +1,10 @@
+/* clearfix */
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 /* icons */
 @font-face {
 	font-family: 'icomoon';
@@ -25,36 +32,47 @@
 }
 
 .icon-droplet:before {
+
 	content: "\e90b";
 }
 .icon-coin-dollar:before {
+  margin: 1px;
 	content: "\e93b";
 }
 .icon-glass:before {
+  margin: 1px;
 	content: "\e9a0";
 }
 .icon-earth:before {
+  margin: 1px;
 	content: "\e9ca";
 }
 .icon-star-empty:before {
+  margin: 1px;
 	content: "\e9d7";
 }
 .icon-heart:before {
+  margin: 1px;
 	content: "\e9da";
 }
 .icon-grin:before {
+  margin: 1px;
 	content: "\e9e9";
 }
 .icon-facebook2:before {
+  margin: 1px;
 	content: "\ea8d";
 }
 .icon-twitter2:before {
+  margin: 1px;
 	content: "\ea92";
 }
 .icon-github:before {
+  margin: 1px;
 	content: "\eab1";
 }
 .icon-linkedin:before {
+  margin: 1px;
 	content: "\eac8";
 }
 

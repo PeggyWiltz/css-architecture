@@ -1,19 +1,26 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 /* Header */
 .header__text {
   min-height: 6em;
 }
-.header__title {
-  float: left;
-}
-
-.header__quote {
+.header__quote-body {
+  text-align:justify;
   float: right;
 }
 
+.header__quote-author {
+  float: right;
+}
 /* Navigation */
 .menu__bar {
   text-align: center;
-  margin-bottom: 1.5em;
+  margin-bottom: 1em;
 }
 
 .menu {
@@ -34,31 +41,36 @@ margin: 0px;
 
 .filters {
   text-align: center;
-  margin-bottom: 1.5em;
+  margin-bottom: 1em;
 }
 
 .filter-menu {
-  padding: 1em;
+  padding: .25em;
 }
 
 .filter-menu__item {
   display: inline;
-  padding: 20px;
+  /*padding: 1em;*/
 }
 
 .filter-menu__input {
-  height: 2em;
-  width: 15em;
+  height: 1.5em;
+  /*width: 12em;*/
 }
 
 .filter-menu__button {
   clear: both;
-  padding: 8px;
+  padding: .75em;
+}
+
+.vert-align {
+  display: inline-block;
+  vertical-align: top;
 }
 
 /* Item */
 .item {
-  padding: 3px;
+  padding: .25em;
   overflow: auto;  /*caveat: */
 }
 
@@ -69,12 +81,15 @@ margin: 0px;
 
 .item__image > img {
   display: block;
-  height: 300px;
-  width: 200px;
+  width:285px;
+}
+
+.item__details {
+  clear: both;
 }
 
 .item__detail {
-  padding: 1px;
+  padding: .1em;
   margin: .25em;
 }
 
@@ -82,39 +97,29 @@ margin: 0px;
   margin-bottom: .75em;
 }
 
-.item__details--hidden {
+[aria-hidden="true"] {
   display: none;
+  visibility: hidden;
 }
 
 .item__details--icons {
-  margin: 10px;
+  margin: .8em;
 }
 
 .item__details--icon {
   display: inline;
-  padding: 8px;
 }
 
 .item__detail--icon-large {
-  padding-top: 8px;
   font-size: 1.66em;
 }
 
-.who-is {
-  clear:both;
-}
+/* Footer */
 
-.who-is__pic {
-  float: left;
-}
-
-.who-is__pic > img {
-  display: block;
-}
-
-.who-is__person {
-  display: inline;
-}
+/*  For testing */
+/*.with-border {  
+  border: solid 1px red;
+}  */
 
 .who-is__person-detail {
   margin: .5em;
@@ -124,6 +129,7 @@ margin: 0px;
   padding: .5em;
 }
 
+/* Misc */
 .circle {
   border-radius: 50%;
   /*behavior: url(PIE.htc);   supports IE8 */

@@ -1,7 +1,7 @@
 body {
   font-family: Bellota, Geneva, sans-serif;
   background-color: #FFF;
-  font-size: 20px;
+  font-size: 16px;
 }
 
 /* elements */
@@ -10,6 +10,10 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 /* Header */
+.header__quote {
+  font-size: .7em;
+}
+
 .header__quote-author {
   font-style: italic;
 }
@@ -28,6 +32,8 @@ h1,h2,h3,h4,h5,h6 {
 
 /* Filters */
 .filters {
+font-size: 1.3em;
+  font-weight: bold;
   background-color: #5DA9AB;
 }
 
@@ -58,7 +64,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .item__detail--title {
-  font-size: 1.75em;
+  font-size: 1.25em;
   color: #5DA9AB;
 }
 
@@ -70,4 +76,10 @@ h1,h2,h3,h4,h5,h6 {
 .item__details--icon-link {
   color: #000;
   text-decoration: none;
+}
+
+/* Footer */
+.who-is {
+  border-top: solid 2px #345D5E;
+  margin-top: .3em;
 }
