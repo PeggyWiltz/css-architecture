@@ -1,7 +1,7 @@
 body {
   font-family: Bellota, Geneva, sans-serif;
   background-color: #FFF;
-  font-size: 16px;
+  font-size: 1.1em;
 }
 
 /* elements */
@@ -45,7 +45,7 @@ h1,h2,h3,h4,h5,h6 {
 
   /* Item */
   .item {
-    border-top: solid 20px #345D5E;
+    border-top: solid 1.5em #345D5E;
     background-color: #C0E2E3;
   }
 
@@ -66,7 +66,7 @@ h1,h2,h3,h4,h5,h6 {
 
   /* Footer */
   .who-is {
-    border-top: solid 2px #345D5E;
+    border-top: solid .1em #345D5E;
     margin-top: .3em;
   }
 
