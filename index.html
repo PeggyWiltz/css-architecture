@@ -5,6 +5,7 @@
 	<title>Modular Design</title>
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/state.css">
 	<!--[if IE]>
@@ -15,7 +16,7 @@
 <body id="home">
   <header>
     <article class="header__text">
-      <section  class="header__titley">
+      <section  class="header__title">
         <h1>Wine Counting</h1>
       </section>
       <section class="header__quote">
@@ -25,7 +26,7 @@
     </article>
     <div class="clear"></div>
     <nav role="navigation" class="menu__bar">
-      <ul class="menu">
+      <ul id="main-menu" class="menu">
         <li class="menu__item">
           <a href="#" class="menu__item--link">Home</a>
         </li>
@@ -64,7 +65,7 @@
       </li>
     </ul>
   </form>
-  <main class="vert-align">
+  <main class="flex-container">
     <!-- icon legend:
                 icon-droplet = wine color (red, white, rose)
                 number = how many bottles we have
@@ -73,7 +74,7 @@
         -->
     <!-- This will obvs be handled with javascript when we get to that part of the class.  Hard coding them for now. -->
     <!-- bottle 1 -->
-    <article class="item" id="bottle1">
+    <article class="item flex-item" id="bottle1">
       <figure class="item__image">
         <img src="images/bottle1.JPG" alt="" />
       </figure>
@@ -112,7 +113,7 @@
       </ul>
     </article>
     <!-- bottle 2 -->
-    <article class="item" id="bottle2">
+    <article class="item flex-item" id="bottle2">
       <figure class="item__image">
         <img src="images/bottle2.JPG" alt="" />
       </figure>
@@ -150,7 +151,7 @@
       </ul>
     </article>
     <!-- bottle 3 -->
-    <article class="item" id="bottle3">
+    <article class="item flex-item" id="bottle3">
       <figure class="item__image">
         <img src="images/bottle3.JPG" alt="" />
       </figure>
@@ -158,7 +159,6 @@
         <li class="item__detail--title">
           <h3>Sharilee</h3>
         </li>
-
         <ul class="item__details--icons">
         <li class="item__details--icon item__detail--icon-large">
           <span class="">2</span>
@@ -189,7 +189,7 @@
       </ul>
     </article>
     <!-- bottle 4 -->
-    <article class="item" id="bottle4">
+    <article class="item flex-item" id="bottle4">
       <figure class="item__image">
         <img src="images/bottle4.JPG" alt="" />
       </figure>
@@ -227,7 +227,7 @@
       </ul>
     </article>
     <!-- bottle 5 -->
-    <article class="item" id="bottle5">
+    <article class="item flex-item" id="bottle5">
       <figure class="item__image">
         <img src="images/bottle5.JPG" alt="" />
       </figure>

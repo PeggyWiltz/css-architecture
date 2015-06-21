@@ -9,77 +9,95 @@ h1,h2,h3,h4,h5,h6 {
   color: #5DA9AB;
 }
 
-/* Header */
-.header__quote {
-  font-size: .7em;
-}
-
-.header__quote-author {
-  font-style: italic;
-}
-
 /* Navigation */
-.menu__bar {
-  font-size: 1.5em;
-  font-weight: bold;
-  background-color: #345D5E;
+  .menu__bar {
+    font-size: 1.5em;
+    font-weight: bold;
+    background-color: #345D5E;
+  }
+
+  .menu__item--link {
+    text-decoration: none;
+    color:  #C0E2E3;
+  }
+  
+   /* Filters */
+  .filters {
+  font-size: 1.3em;
+    font-weight: bold;
+    background-color: #5DA9AB;
+  }
+
+  .filter-menu__item {
+    color: #505E5E;
+  }
+
+  .filter-menu__input {
+    font: inherit;
+    font-size: smaller;
+  }
+  
+   .filter-menu__button {
+    font: inherit;
+    background-color: #345D5E;
+    color: #C0E2E3;
+  }
+
+  /* Item */
+  .item {
+    border-top: solid 20px #345D5E;
+    background-color: #C0E2E3;
+  }
+
+  .item__detail {
+    font-size: 1em;
+    font-weight: bold;
+  }
+  
+ 
+  .item__detail--year {
+    font-size: 1.2em;
+  }
+
+  /*  Icons */
+  .item__details--icon-link {
+    color: #000;
+    text-decoration: none;
+  }
+
+  /* Footer */
+  .who-is {
+    border-top: solid 2px #345D5E;
+    margin-top: .3em;
+  }
+
+@media only screen and (min-width: 481px) and (max-width: 900px) {
+
+  /* Header */
+  .header__quote {
+    font-size: .7em;
+  }
+
+  .header__quote-author {
+    font-style: italic;
+  }
+  
+    .item__detail--title {
+    font-size: 1.25em;
+    color: #5DA9AB;
+  }
+
 }
 
-.menu__item--link {
-  text-decoration: none;
-  color:  #C0E2E3;
-}
-
-/* Filters */
-.filters {
-font-size: 1.3em;
-  font-weight: bold;
-  background-color: #5DA9AB;
-}
-
-.filter-menu__item {
-  color: #505E5E;
-}
-
-.filter-menu__input {
-  font: inherit;
-  font-size: smaller;
-}
-
-.filter-menu__button {
-  font: inherit;
-  background-color: #345D5E;
-  color: #C0E2E3;
-}
-
-/* Item */
-.item {
-  border-top: solid 20px #345D5E;
-  background-color: #C0E2E3;
-}
-
-.item__detail {
-  font-size: 1em;
-  font-weight: bold;
-}
-
-.item__detail--title {
-  font-size: 1.25em;
-  color: #5DA9AB;
-}
-
-.item__detail--year {
-  font-size: 1.2em;
-}
-
-/*  Icons */
-.item__details--icon-link {
-  color: #000;
-  text-decoration: none;
-}
-
-/* Footer */
-.who-is {
-  border-top: solid 2px #345D5E;
-  margin-top: .3em;
+@media screen and (max-width: 480px)
+{
+  .header__quote {
+    display: none;
+  }   
+  
+    .item__detail--title {
+    font-size: 1em;
+    font-style: bolder;
+    color: #5DA9AB;
+  }
 }
