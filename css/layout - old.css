@@ -1,0 +1,138 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* Header */
+.header__text {
+  min-height: 6em;
+}
+.header__quote-body {
+  text-align:justify;
+  float: right;
+}
+
+.header__quote-author {
+  float: right;
+}
+/* Navigation */
+.menu__bar {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.menu {
+padding: 8px;
+margin: 0px;
+}
+
+.menu__item {
+  display: inline;
+  padding: 20px;
+}
+
+.menu__item--link {
+  padding: 8px 8px 8px 8px;
+}
+
+/* Filters */
+
+.filters {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.filter-menu {
+  padding: .25em;
+}
+
+.filter-menu__item {
+  display: inline;
+  /*padding: 1em;*/
+}
+
+.filter-menu__input {
+  height: 1.5em;
+  /*width: 12em;*/
+}
+
+.filter-menu__button {
+  clear: both;
+  padding: .75em;
+}
+
+.vert-align {
+  display: inline-block;
+  vertical-align: top;
+}
+
+/* Item */
+.item {
+  padding: .25em;
+  overflow: auto;  /*caveat: */
+}
+
+.item__image {
+  float: left;
+  margin: 3px 8px 3px 3px;
+}
+
+.item__image > img {
+  display: block;
+  width:285px;
+}
+
+.item__details {
+  clear: both;
+}
+
+.item__detail {
+  padding: .1em;
+  margin: .25em;
+}
+
+.item__detail--title {
+  margin-bottom: .75em;
+}
+
+[aria-hidden="true"] {
+  display: none;
+  visibility: hidden;
+}
+
+.item__details--icons {
+  margin: .8em;
+}
+
+.item__details--icon {
+  display: inline;
+}
+
+.item__detail--icon-large {
+  font-size: 1.66em;
+}
+
+/* Footer */
+
+/*  For testing */
+/*.with-border {  
+  border: solid 1px red;
+}  */
+
+.who-is__person-detail {
+  margin: .5em;
+}
+
+.copyright {
+  padding: .5em;
+}
+
+/* Misc */
+.circle {
+  border-radius: 50%;
+  /*behavior: url(PIE.htc);   supports IE8 */
+  padding: 12px;
+}
+
