@@ -5,8 +5,6 @@ html {
   box-sizing: inherit;
 }
 
-
-
 .flex-container {
     display:flex;
     flex-direction: row;
@@ -16,12 +14,10 @@ html {
     align-items: flex-start;
 }
 		
- 
-.flex-item {
+ .flex-item {
     width: 300px;
     height: 42em;
     flex-grow: 1;
-
 }
 
 [aria-hidden="true"] {
@@ -40,7 +36,6 @@ html {
 .item__detail--icon-large {
   font-size: 1.66em;
 }
-
 
 @media only screen and (min-width: 481px) {
   /* Navigation */
@@ -61,33 +56,32 @@ html {
 
   .menu__item--link {
     padding: 8px 8px 8px 8px;
+  }  
+  
+  /* Filters */
+  .filters {
+    text-align: center;
+    margin-bottom: 1em;
   }
-  
-  
-/* Filters */
-.filters {
-  text-align: center;
-  margin-bottom: 1em;
-}
 
-.filter-menu {
-  padding: .25em;
-}
+  .filter-menu {
+    padding: .25em;
+  }
 
-.filter-menu__item {
-  display: inline;
-  /*padding: 1em;*/
-}
+  .filter-menu__item {
+    display: inline;
+    /*padding: 1em;*/
+  }
 
-.filter-menu__input {
-  height: 1.5em;
-  /*width: 12em;*/
-}
+  .filter-menu__input {
+    height: 1.5em;
+    /*width: 12em;*/
+  }
 
-.filter-menu__button {
-  clear: both;
-  padding: .75em;
-}
+  .filter-menu__button {
+    clear: both;
+    padding: .75em;
+  }
 }
 
 @media screen and (max-width: 480px)
@@ -120,8 +114,7 @@ html {
   #main-menu li div.column {
       width: auto;
       border: none;
-  }
-  
+  }  
    
   /* Footer */ 
   .who-is__pic {

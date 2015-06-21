@@ -52,8 +52,7 @@ h1,h2,h3,h4,h5,h6 {
   .item__detail {
     font-size: 1em;
     font-weight: bold;
-  }
-  
+  } 
  
   .item__detail--year {
     font-size: 1.2em;
@@ -86,7 +85,6 @@ h1,h2,h3,h4,h5,h6 {
     font-size: 1.25em;
     color: #5DA9AB;
   }
-
 }
 
 @media screen and (max-width: 480px)
