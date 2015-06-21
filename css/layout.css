@@ -22,7 +22,7 @@ html {
   visibility: hidden;
 }
 
-img {
+.item__image--responsive {
   width: 100%;
 }
 
