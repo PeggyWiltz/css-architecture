@@ -1,9 +1,6 @@
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
-  box-sizing: inherit;
-}
 
 .flex-container {
     display:flex;
@@ -23,6 +20,20 @@ html {
 [aria-hidden="true"] {
   display: none;
   visibility: hidden;
+}
+
+/* Header */
+.header__text {
+  min-height: 6em;
+}
+
+.header__title {
+  min-width: 25%;
+}
+
+.header__quote {
+  min-width: 75%;
+  text-align: right;
 }
 
 .item__details--icons {
