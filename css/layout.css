@@ -20,9 +20,8 @@ html {
 .flex-item {
     width: 300px;
     height: 42em;
-    /*flex-grow: <property unused>
-    flex-shrink: <property unused>
-    flex-basis: <property unused>*/
+    flex-grow: 1;
+
 }
 
 [aria-hidden="true"] {
@@ -57,7 +56,7 @@ html {
 
   .menu__item {
     display: inline;
-    padding: 20px;
+    padding: .5em;
   }
 
   .menu__item--link {
