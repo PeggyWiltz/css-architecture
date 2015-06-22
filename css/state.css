@@ -35,4 +35,5 @@
 .item__details--icon-link:hover {
   color: #79DBDE;
   text-decoration: none;
+  rotate: scale(15);
 }
