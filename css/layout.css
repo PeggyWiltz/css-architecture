@@ -1,4 +1,4 @@
-html {
+* {
   box-sizing: border-box;
 }
 
@@ -29,16 +29,19 @@ html {
 
 /* Header */
 .header__text {
-  min-height: 6em;
+  width: 100%;
+  z-index: 0;
 }
-
+  
 .header__title {
   min-width: 25%;
+  z-index: 100;
 }
 
 .header__quote {
   min-width: 75%;
   text-align: right;
+  z-index: 100;
 }
 
 .item__details {
@@ -156,9 +159,32 @@ html {
   }  
    
   /* Footer */ 
-.who-is__pic {
-  display: none;
-} 
+  .who-is__pic {
+    display: none;
+  } 
+}
 
+@media screen and (min-width: 400px) {  /*55.3125em*/
+  .header__text {
+    height: 10em;
+  }
+}
+
+@media screen and (min-width: 885px) {  /*55.3125em*/
+  .header__text {
+    height: 20em;
+  }
+}
+
+@media screen and (min-width: 1300px) {  /*81.25em*/
+  .header__text {
+    height: 30em;
+  }
+}
+
+@media screen and (min-width: 1750px) {  /*109.75em*/
+  .header__text {
+    height: 40em;
+  }
 }
 
