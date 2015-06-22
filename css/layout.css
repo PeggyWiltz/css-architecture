@@ -55,15 +55,12 @@
 
 .item__details--icons {
   margin: .8em;
+  font-size: 2em;
 }
 
 .item__details--icon {
   display: inline;
 }-
-
-.item__detail--icon-large {
-  font-size: 2em;
-}
 
 /* Footer */
 .who-is__pic {
