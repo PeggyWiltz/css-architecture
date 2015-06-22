@@ -70,7 +70,7 @@ h1,h2,h3,h4,h5,h6 {
     margin-top: .3em;
   }
 
-@media only screen and (min-width: 481px) and (max-width: 900px) {
+@media only screen and (min-width: 30.1en) and (max-width: 56.25em) {
 
   /* Header */
   .header__quote {
@@ -87,7 +87,7 @@ h1,h2,h3,h4,h5,h6 {
   }
 }
 
-@media screen and (max-width: 480px)
+@media screen and (max-width: 30em)
 {
   .header__quote {
     display: none;
