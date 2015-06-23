@@ -1,12 +1,26 @@
 body {
   font-family: Bellota, Geneva, sans-serif;
   background-color: #FFF;
-  font-size: 16px;
+  font-size: 1.1em;
+  /*background-image: url(../images/headerImg.JPG);
+  background-repeat: no-repeat;
+  background-color: #345D5E;
+  background-blend-mode: multiply;
+  background-size: 100%; */
 }
 
 /* elements */
 h1,h2,h3,h4,h5,h6 {
   color: #5DA9AB;
+}
+ 
+ /* Header */
+.header__text {
+  background-image: url(../images/headerImg.JPG);
+  background-color: #345D5E;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
 }
 
 /* Navigation */
@@ -20,7 +34,7 @@ h1,h2,h3,h4,h5,h6 {
     text-decoration: none;
     color:  #C0E2E3;
   }
-  
+
    /* Filters */
   .filters {
   font-size: 1.3em;
@@ -36,7 +50,7 @@ h1,h2,h3,h4,h5,h6 {
     font: inherit;
     font-size: smaller;
   }
-  
+
    .filter-menu__button {
     font: inherit;
     background-color: #345D5E;
@@ -45,54 +59,51 @@ h1,h2,h3,h4,h5,h6 {
 
   /* Item */
   .item {
-    border-top: solid 20px #345D5E;
+    border-top: solid 1.5em #345D5E;
     background-color: #C0E2E3;
   }
 
   .item__detail {
     font-size: 1em;
     font-weight: bold;
-  } 
- 
+  }
+
   .item__detail--year {
     font-size: 1.2em;
   }
 
   /*  Icons */
-  .item__details--icon-link {
+  .item__details--icon-link,
+  .item__details--icon-link--color {
     color: #000;
     text-decoration: none;
   }
 
   /* Footer */
   .who-is {
-    border-top: solid 2px #345D5E;
+    border-top: solid .1em #345D5E;
     margin-top: .3em;
   }
 
-@media only screen and (min-width: 481px) and (max-width: 900px) {
+@media only screen and (min-width: 30.1en) and (max-width: 56.25em) {
 
   /* Header */
-  .header__quote {
-    font-size: .7em;
-  }
-
   .header__quote-author {
     font-style: italic;
   }
-  
+
     .item__detail--title {
     font-size: 1.25em;
     color: #5DA9AB;
   }
 }
 
-@media screen and (max-width: 480px)
+@media screen and (max-width: 30em)
 {
   .header__quote {
     display: none;
-  }   
-  
+  }
+
     .item__detail--title {
     font-size: 1em;
     font-style: bolder;
