@@ -66,28 +66,28 @@ function setQuote () {
     ];
     var numQuotes = quoteArray.length;
     if (numQuotes > 0) {
-        var rand = randomIntFromInterval(0, numQuotes);
+        var rand = randomIntFromInterval(0, numQuotes - 1);
         var myQuote = quoteArray[rand];
-        
+        var formattedQuote = '\"' + myQuote.text + '\"';
+        var formattedAuthor = '- ' + myQuote.author;
         var quoteNode = document.getElementById("home").firstElementChild.firstElementChild.lastElementChild;
-        var oldQuote = quoteNode.firstElementChild.firstChild.nodeValue;
-        var oldAuthor = quoteNode.lastElementChild.firstChild.nodeValue;
-        oldAuthor = myQuote.author;
-        oldQuote = myQuote.text;
+        quoteNode.firstElementChild.firstChild.data = formattedQuote;
+        quoteNode.lastElementChild.firstChild.data = formattedAuthor;
     }
+    return;
 }
 
 window.onload = function () {
 
-    var el = document.getElementById("header__text");
+    var el = document.getElementById("header__quote-body");
     if (el.addEventListener) {
-        el.addEventListener("mouseover", setQuote, false);
+        el.addEventListener("mouseout", setQuote, false);
     } else {
-        el.attachEvent('onmouseover', setQuote);
+        el.attachEvent('onmouseout', setQuote);
     }
 
 };
-//document.getElementsByTagName("header")[0].addEventListener("mouseover", setQuote, false);
+
 
 
 
