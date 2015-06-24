@@ -1,6 +1,5 @@
 $(function() {
 
-  function init() {
     maxim = 600;
     mmedia = document.getElementById("media");
     play = document.getElementById("play");
@@ -9,7 +8,7 @@ $(function() {
 
     play.addEventListener("click", push, false);
     bar.addEventListener("click", move, false);
-  }
+  
 
   function push() {
       if (!mmedia.paused && !mmedia.ended) {
@@ -26,7 +25,7 @@ $(function() {
 
   function status() {
     if (!mmedia.ended) {
-      var size = parseInit(mmedia.currentTime * maxim / mmedia.duration);
+      var size = parseInt(mmedia.currentTime * maxim / mmedia.duration);
       progress.style.width = size + 'px';
     }
     else {
