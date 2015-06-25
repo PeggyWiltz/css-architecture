@@ -37,26 +37,14 @@ $(document).ready(function() {
     }
   });
   
-   //***************************************************
-/*    Given a <video> element with an id of ‘v':
-
-<progress id='p' max='100' value='0'><span>0</span>% played</progress>
-Use this JavaScript:
-
-var video = document.getElementById('v');
-var pBar = document.getElementById('p');
-video.addEventListener('timeupdate', function() {
-  var percent = Math.floor((100 / video.duration) * video.currentTime);
-  pBar.value = percent;
-  pBar.getElementsByTagName('span')[0].innerHTML = percent;
-}, false);
-The JavaScript uses the timeupdate event, which is constantly triggered as the video is being played. 
-The value is converted into a percentage value using the video’s duration 
-(full length) and currentTime (where in the video it currently is). */
-   //****************************************************
-  $("#player__video").prop('muted', true); //mute
-  
-  $("#player__video").prop('muted', false); //unmute
-  
+$('#player__video').on('timeupdate', function() {
+    var video = $('#player__video');
+    
+    var currentPos = video[0].currentTime; 
+    var maxduration = video[0].duration; 
+    
+    var percentage = 100 * (currentPos  / maxduration); 
+    $('#player__button--progress').css('width', percentage+'%');
+});
   
 });

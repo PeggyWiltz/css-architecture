@@ -37,6 +37,7 @@ button {
 }
 
 #player__button--bar {
+  position: relative;
   float: right;
   width: 46em;
   height: 1.333em;
@@ -46,8 +47,8 @@ button {
 
 #player__button--progress {
     position: absolute;
-    width: 0px;
-    height: 16px;
+    width: 0;
+    height: 1.333em;
   }
 
 
