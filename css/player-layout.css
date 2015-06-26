@@ -1,0 +1,55 @@
+body {
+  text-align: center;
+  font-size: 12px;
+}
+
+.clear-both {
+  clear: both;
+}
+header, section, footer, aside, nav, article, figure, figcaption, hgroup {
+  display: block;
+}
+
+#player {
+  width: 60em;
+  margin: 1.66em auto;
+  padding: 2em;
+    }
+
+.player__video {
+  width: 60em;
+  height: 33.33em;
+}
+
+nav {
+  margin: .416em 0em;
+}
+
+#player__buttons {
+  display: inline;
+  width: 7.08em;
+  height: 1.66em;
+}
+
+button {
+  float: left;
+  margin: 0em .5em;
+}
+
+#player__button--bar {
+  position: relative;
+  float: right;
+  width: 46em;
+  height: 1.333em;
+  padding: .166em;
+  margin: 0em .5em;
+  }
+
+#player__button--progress {
+    position: absolute;
+    width: 0;
+    height: 1.333em;
+  }
+
+
+

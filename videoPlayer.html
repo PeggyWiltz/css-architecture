@@ -1,0 +1,36 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+        <link rel="stylesheet" href="css/player-layout.css">
+        <link rel="stylesheet" href="css/player-style.css">
+
+    </head>
+    <body>
+        <section id="player">
+          <video id="player__video" class="player__video">
+            <source src="video/dadCard_compressed.mp4">
+          </video>
+          <nav>
+            <div id="player__buttons">
+              <button type="button" id="player__button--play">Play</button> 
+              <button type="button" id="player__button--mute">Mute</button>               
+            </div>            
+            <div id="player__button--bar">
+              <div id="player__button--progress"></div>
+            </div>            
+            <div class="clear-both" ></div>
+          </nav>
+        </section>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="js/player.js"></script>
+
+    </body>
+</html>
