@@ -1,93 +1,118 @@
-// JavaScript source code
+/* $(function() {
+    $.ajax({
+      dataType: 'json',
+      type: 'GET',
+      url: 'bottles.json',
+      success: function(data) {
+        $.each(data.bottles, function(i, bottle) {
+          console.log(bottle);
+          console.log(i);
+          $('#bottles').append('<li>name: ' + bottle.name + ', winery: ' + bottle.winery + '</li>');
 
-function randomIntFromInterval(min, max) {
-    //Method found here: http://stackoverflow.com/questions/4959975/generate-random-value-between-two-numbers-in-javascript
-    return Math.floor(Math.random() * (max - min + 1) + min);
+        });
+      }
+    });
+
+}) */
+
+Number.prototype.formatMoney = function(places, symbol, thousand, decimal) {
+	places = !isNaN(places = Math.abs(places)) ? places : 2;
+	symbol = symbol !== undefined ? symbol : "$";
+	thousand = thousand || ",";
+	decimal = decimal || ".";
+	var number = this, 
+	    negative = number < 0 ? "-" : "",
+	    i = parseInt(number = Math.abs(+number || 0).toFixed(places), 10) + "",
+	    j = (j = i.length) > 3 ? j % 3 : 0;
+	return symbol + negative + (j ? i.substr(0, j) + thousand : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + thousand) + (places ? decimal + Math.abs(number - i).toFixed(places).slice(2) : "");
+};  //From http://www.josscrowcroft.com/2011/code/format-unformat-money-currency-javascript/
+
+function getColorClass(colorNum) {  
+  var colorClass = 'item__detail--red-wine';
+  switch(colorNum) {
+    case "1":
+        return 'item__detail--white-wine';
+        break;
+    case "2":
+        return 'item__detail--rose-wine';
+        break;   
+  }
+  return colorClass;  
 }
 
-function setQuote () {
-    var quoteArray = [
-        {
-            "text": "Beer is made by men, wine by God.",
-            "author": "Martin Luther"
-        },
-        {
-            "text": "I cook with wine, sometimes I even add it to the food.",
-            "author": "W.C. Fields"
-        },
-        {
-            "text": "Either give me more wine or leave me alone.",
-            "author": "Rumi"
-        },
-        {
-            "text": "Wine is the most healthful and most hygienic of beverages.",
-            "author": "Louis Pasteur"
-        },
-        {
-            "text": "Age appears best in four things: old wood to burn, old wine to drink, old friends to trust and old authors to read.",
-            "author": "Francis Bacon"
-        },
-        {
-            "text": "What wine goes with Captain Crunch?",
-            "author": "George Carlin"
-        },
-        {
-            "text": "In wine, there's truth.",
-            "author": "Pliny the Elder"
-        },
-        {
-            "text": "I pray you, do not fall in love with me, for I am falser than vows made in wine.",
-            "author": "William Shakespeare"
-        },
-        {
-            "text": "Give me wine to wash me clean of the weather-stains of cares.",
-            "author": "Ralph Waldo Emerson"
-        },
-        {
-            "text": "If we sip the wine, we find dreams coming upon us out of the imminent night",
-            "author": "D.H. Lawrence"
-        },
-        {
-            "text": "Wine makes all things possible.",
-            "author": "George R.R. Martin"
-        },
-        {
-            "text": "They are not long, the days of wine and roses.",
-            "author": "Ernest Dowson"
-        },
-        {
-            "text": "A bottle of wine begs to be shared; I have never met a miserly wine lover.",
-            "author": "Clifton Fadiman"
-        },
-        {
-            "text": "Life's too short to drink cheap wine...",
-            "author": "Cliff Hakim"
-        }
-    ];
-    var numQuotes = quoteArray.length;
-    if (numQuotes > 0) {
-        var rand = randomIntFromInterval(0, numQuotes - 1);
-        var myQuote = quoteArray[rand];
-        var formattedQuote = '\"' + myQuote.text + '\"';
-        var formattedAuthor = '- ' + myQuote.author;
-        var quoteNode = document.getElementById("home").firstElementChild.firstElementChild.lastElementChild;
-        quoteNode.firstElementChild.firstChild.data = formattedQuote;
-        quoteNode.lastElementChild.firstChild.data = formattedAuthor;
-    }
-    return;
+function getWineClubMembership(isWineClub) {  
+  var clubClass = '';
+  if (isWineClub === "1") {
+    clubClass = 'icon-star-empty';
+  }
+  return clubClass;  
 }
 
-window.onload = function () {
+function getReadyToDrinkClass(isReadyToDrink) {
+  var readyToDrinkClass = "";
+  if (isReadyToDrink === "1") {
+    readyToDrinkClass = "icon-glass";
+  }
+  return readyToDrinkClass;
+}
 
-    var el = document.getElementById("header__quote-body");
-    if (el.addEventListener) {
-        el.addEventListener("mouseout", setQuote, false);
-    } else {
-        el.attachEvent('onmouseout', setQuote);
-    }
-
-};
-
-
-
-
+$(function() {
+    $.ajax({
+      dataType: 'json',
+      type: 'GET',
+      url: 'bottles.json',
+      success: function(data) {
+        var textToInsert = '';
+        $.each(data.bottles, function(idx, bottle) {
+          var wineColorClass = getColorClass(bottle.wineColor);
+          var wineClubClass = getWineClubMembership(bottle.wineClub);
+          var readyToDrinkClass = getReadyToDrinkClass(bottle.readyToDrink)
+          
+          textToInsert += '<article class="item flex-item" id="bottle' + bottle.id + '">';
+          textToInsert += '<figure class="item__image">';
+          textToInsert += '<img src="images/bottle' + bottle.id + '.JPG" alt="" class="item__image--responsive" />';
+          textToInsert += '</figure>';
+          textToInsert += '<ul class="item__details">';
+          textToInsert += '<li class="item__detail--title">';
+          textToInsert += '<h3>' + bottle.name + '</h3>';
+          textToInsert += '</li>';
+          textToInsert += '<ul class="item__details--icons">';
+          textToInsert += '<li class="item__details--icon item__detail--icon-large">';
+          textToInsert += '<a class="item__details--icon-link" href="#">';
+          textToInsert += '<span class="">' + bottle.bottleCount + '</span>';
+          textToInsert += '</a>';
+          textToInsert += '</li>';
+          textToInsert += '<li class="item__details--icon item__detail--icon-large">';
+          textToInsert += '<a class="item__details--icon-link" href="#">';
+          textToInsert += '<span class="icon-droplet ' +  wineColorClass + '"></span>';
+          textToInsert += '</a>';
+          textToInsert += '</li>';
+          textToInsert += '<li class="item__details--icon item__detail--icon-large">';
+          textToInsert += '<a class="item__details--icon-link" href="#">';
+          textToInsert += '<span class="' + wineClubClass  + '"></span>';
+          textToInsert += '</a>';
+          textToInsert += '</li>';
+          textToInsert += '<li class="item__details--icon item__detail--icon-large">';
+          textToInsert += '<a class="item__details--icon-link" href="#">';
+          textToInsert += '<span class="' + readyToDrinkClass + '"></span>';
+          textToInsert += '</a>';
+          textToInsert += '</li>';
+          textToInsert += '</ul>';
+          textToInsert += '<li class="item__detail">' + bottle.winery + ', ' + bottle.wineryLoc + '</li>';
+          textToInsert += '<li class="item__detail item__detail--year">' + bottle.vintage + '</li>';
+          textToInsert += '<li class="item__detail">' + bottle.varietal + '</li>';
+          textToInsert += '<li class="item__detail">';
+          textToInsert += '<label>Purchased </label>';
+          textToInsert += '<label id="bottle1-purch-where">' + bottle.wherePurchased + ', </label>';
+          textToInsert += '<label id="bottle1-purch-when">' + bottle.whenPurchased + '</label>';
+          textToInsert += '</li>';
+          textToInsert += '<li class="item__detail">' + bottle.price.formatMoney() + '</li>';
+          textToInsert += '<li class="item__detail item__detail--description">' + bottle.notes;
+          textToInsert += '</li>';
+          textToInsert += '</ul>';
+          textToInsert += '</article>';
+        });
+        $('.bottle-container').append(textToInsert);
+      }
+    });
+})

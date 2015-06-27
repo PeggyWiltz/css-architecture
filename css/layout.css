@@ -61,6 +61,8 @@
 }
 
 .item__details--icon {
+  margin-left: .5em;
+  margin-right: .5em;
   display: inline;
 }-
 
