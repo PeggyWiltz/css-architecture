@@ -1,43 +1,26 @@
-/* $(function() {
-    $.ajax({
-      dataType: 'json',
-      type: 'GET',
-      url: 'bottles.json',
-      success: function(data) {
-        $.each(data.bottles, function(i, bottle) {
-          console.log(bottle);
-          console.log(i);
-          $('#bottles').append('<li>name: ' + bottle.name + ', winery: ' + bottle.winery + '</li>');
-
-        });
-      }
-    });
-
-}) */
-
 Number.prototype.formatMoney = function(places, symbol, thousand, decimal) {
-	places = !isNaN(places = Math.abs(places)) ? places : 2;
-	symbol = symbol !== undefined ? symbol : "$";
-	thousand = thousand || ",";
-	decimal = decimal || ".";
-	var number = this, 
-	    negative = number < 0 ? "-" : "",
-	    i = parseInt(number = Math.abs(+number || 0).toFixed(places), 10) + "",
-	    j = (j = i.length) > 3 ? j % 3 : 0;
-	return symbol + negative + (j ? i.substr(0, j) + thousand : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + thousand) + (places ? decimal + Math.abs(number - i).toFixed(places).slice(2) : "");
+  places = !isNaN(places = Math.abs(places)) ? places : 2;
+  symbol = symbol !== undefined ? symbol : "$";
+  thousand = thousand || ",";
+  decimal = decimal || ".";
+  var number = this, 
+  negative = number < 0 ? "-" : "",
+  i = parseInt(number = Math.abs(+number || 0).toFixed(places), 10) + "",
+  j = (j = i.length) > 3 ? j % 3 : 0;
+  return symbol + negative + (j ? i.substr(0, j) + thousand : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + thousand) + (places ? decimal + Math.abs(number - i).toFixed(places).slice(2) : "");
 };  //From http://www.josscrowcroft.com/2011/code/format-unformat-money-currency-javascript/
 
 function getColorClass(colorNum) {  
   var colorClass = 'item__detail--red-wine';
   switch(colorNum) {
     case "1":
-        return 'item__detail--white-wine';
-        break;
+      return 'item__detail--white-wine';
+      break;
     case "2":
-        return 'item__detail--rose-wine';
-        break;   
+      return 'item__detail--rose-wine';
+      break;   
   }
-  return colorClass;  
+return colorClass;  
 }
 
 function getWineClubMembership(isWineClub) {  
@@ -56,63 +39,110 @@ function getReadyToDrinkClass(isReadyToDrink) {
   return readyToDrinkClass;
 }
 
+function getBottleHtml(bottle) {
+  var textToReturn = '';
+
+  var wineColorClass = getColorClass(bottle.wineColor);
+  var wineClubClass = getWineClubMembership(bottle.wineClub);
+  var readyToDrinkClass = getReadyToDrinkClass(bottle.readyToDrink)
+
+  textToReturn += '<article class="item flex-item" id="bottle' + bottle.id + '">';
+  textToReturn += '<figure class="item__image">';
+  textToReturn += '<img src="' + bottle.pic + '" alt="" class="item__image--responsive" />';
+  textToReturn += '</figure>';
+  textToReturn += '<ul class="item__details">';
+  textToReturn += '<li class="item__detail--title">';
+  textToReturn += '<h3>' + bottle.name + '</h3>';
+  textToReturn += '</li>';
+  textToReturn += '<ul class="item__details--icons">';
+  textToReturn += '<li class="item__details--icon item__detail--icon-large">';
+  textToReturn += '<a class="item__details--icon-link" href="#">';
+  textToReturn += '<span class="">' + bottle.bottleCount + '</span>';
+  textToReturn += '</a>';
+  textToReturn += '</li>';
+  textToReturn += '<li class="item__details--icon item__detail--icon-large">';
+  textToReturn += '<a class="item__details--icon-link" href="#">';
+  textToReturn += '<span class="icon-droplet ' +  wineColorClass + '"></span>';
+  textToReturn += '</a>';
+  textToReturn += '</li>';
+  textToReturn += '<li class="item__details--icon item__detail--icon-large">';
+  textToReturn += '<a class="item__details--icon-link" href="#">';
+  textToReturn += '<span class="' + wineClubClass  + '"></span>';
+  textToReturn += '</a>';
+  textToReturn += '</li>';
+  textToReturn += '<li class="item__details--icon item__detail--icon-large">';
+  textToReturn += '<a class="item__details--icon-link" href="#">';
+  textToReturn += '<span class="' + readyToDrinkClass + '"></span>';
+  textToReturn += '</a>';
+  textToReturn += '</li>';
+  textToReturn += '</ul>';
+  textToReturn += '<li class="item__detail">' + bottle.winery + ', ' + bottle.wineryLoc + '</li>';
+  textToReturn += '<li class="item__detail item__detail--year">' + bottle.vintage + '</li>';
+  textToReturn += '<li class="item__detail">' + bottle.varietal + '</li>';
+  textToReturn += '<li class="item__detail">';
+  textToReturn += '<label>Purchased </label>';
+  textToReturn += '<label id="bottle1-purch-where">' + bottle.wherePurchased + ', </label>';
+  textToReturn += '<label id="bottle1-purch-when">' + bottle.whenPurchased + '</label>';
+  textToReturn += '</li>';
+  textToReturn += '<li class="item__detail">' + bottle.price.formatMoney() + '</li>';
+  textToReturn += '<li class="item__detail item__detail--description">' + bottle.notes;
+  textToReturn += '</li>';
+  textToReturn += '</ul>';
+  textToReturn += '</article>';
+
+  return textToReturn;
+}
+
 $(function() {
+  var frmPic = $('#form__add-new--pic');
+  var frmName =  $('#form__add-new--name');
+  var frmNumBottles = $('#form__add-new--num-bottles');
+
+  $.ajax({
+    dataType: 'json',
+    type: 'GET',
+    url: 'bottles.json',
+    success: function(data) {
+      var textToInsert = '';
+      $.each(data.bottles, function(idx, bottle) {
+      textToInsert += getBottleHtml(bottle);
+      });
+      $('.bottle-container').append(textToInsert);
+    },
+    error: function() {
+      alert('error loading bottles');
+    }
+  });
+
+  $('#add-new').on('click', function() {
+    var bottle = {
+      pic: frmPic.val(),
+      name: frmName.val(), 
+      bottleCount: frmNumBottles.val()
+      /* wineColor: "2",
+      wineClub: "0",
+      readyToDrink: "1",      
+      winery: "Balboa", 
+      wineryLoc: "Walla Walla, WA", 
+      varietal: "4% Viognier, 94% Syrah",
+      vintage: "2014",
+      wherePurchased: "At the winery",
+      whenPurchased: "April 2015",
+      price: 14.00,
+      notes: "Bought on a trip with Carrie and Chuck." */      
+    };
+
     $.ajax({
       dataType: 'json',
-      type: 'GET',
+      type: 'POST',
       url: 'bottles.json',
-      success: function(data) {
-        var textToInsert = '';
-        $.each(data.bottles, function(idx, bottle) {
-          var wineColorClass = getColorClass(bottle.wineColor);
-          var wineClubClass = getWineClubMembership(bottle.wineClub);
-          var readyToDrinkClass = getReadyToDrinkClass(bottle.readyToDrink)
-          
-          textToInsert += '<article class="item flex-item" id="bottle' + bottle.id + '">';
-          textToInsert += '<figure class="item__image">';
-          textToInsert += '<img src="images/bottle' + bottle.id + '.JPG" alt="" class="item__image--responsive" />';
-          textToInsert += '</figure>';
-          textToInsert += '<ul class="item__details">';
-          textToInsert += '<li class="item__detail--title">';
-          textToInsert += '<h3>' + bottle.name + '</h3>';
-          textToInsert += '</li>';
-          textToInsert += '<ul class="item__details--icons">';
-          textToInsert += '<li class="item__details--icon item__detail--icon-large">';
-          textToInsert += '<a class="item__details--icon-link" href="#">';
-          textToInsert += '<span class="">' + bottle.bottleCount + '</span>';
-          textToInsert += '</a>';
-          textToInsert += '</li>';
-          textToInsert += '<li class="item__details--icon item__detail--icon-large">';
-          textToInsert += '<a class="item__details--icon-link" href="#">';
-          textToInsert += '<span class="icon-droplet ' +  wineColorClass + '"></span>';
-          textToInsert += '</a>';
-          textToInsert += '</li>';
-          textToInsert += '<li class="item__details--icon item__detail--icon-large">';
-          textToInsert += '<a class="item__details--icon-link" href="#">';
-          textToInsert += '<span class="' + wineClubClass  + '"></span>';
-          textToInsert += '</a>';
-          textToInsert += '</li>';
-          textToInsert += '<li class="item__details--icon item__detail--icon-large">';
-          textToInsert += '<a class="item__details--icon-link" href="#">';
-          textToInsert += '<span class="' + readyToDrinkClass + '"></span>';
-          textToInsert += '</a>';
-          textToInsert += '</li>';
-          textToInsert += '</ul>';
-          textToInsert += '<li class="item__detail">' + bottle.winery + ', ' + bottle.wineryLoc + '</li>';
-          textToInsert += '<li class="item__detail item__detail--year">' + bottle.vintage + '</li>';
-          textToInsert += '<li class="item__detail">' + bottle.varietal + '</li>';
-          textToInsert += '<li class="item__detail">';
-          textToInsert += '<label>Purchased </label>';
-          textToInsert += '<label id="bottle1-purch-where">' + bottle.wherePurchased + ', </label>';
-          textToInsert += '<label id="bottle1-purch-when">' + bottle.whenPurchased + '</label>';
-          textToInsert += '</li>';
-          textToInsert += '<li class="item__detail">' + bottle.price.formatMoney() + '</li>';
-          textToInsert += '<li class="item__detail item__detail--description">' + bottle.notes;
-          textToInsert += '</li>';
-          textToInsert += '</ul>';
-          textToInsert += '</article>';
-        });
-        $('.bottle-container').append(textToInsert);
+      data: bottle,
+      success: function(newBottle) {
+      $('.bottle-container').append( getBottleHtml(newBottle));
+      },
+        error: function() {
+        alert('error saving order');
       }
     });
+  });
 })

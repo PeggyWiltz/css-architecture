@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+.clear {
+  clear: both;
+}
+
 .flex-container {
     display:flex;
     flex-direction: row;
@@ -78,6 +82,10 @@
   
 .who-is__person-detail {
   margin: .5em;
+}
+
+#form__add-new label {
+display: block;
 }
 
 @media only screen and (min-width: 30.1em) {
