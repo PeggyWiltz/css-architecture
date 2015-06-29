@@ -14,40 +14,41 @@
     </head>
     <body>
         <main>
+        <!-- Why do these appear for a flash before disappearing?  Way to make that stop? -->
           <button id="form__add-new--button" value="Add a Bottle">Add</button>
+          <button id="form__delete--button" value="Delete a Bottle">Delete</button>
             <form id="form__add-new">
               <fieldset>
-
               <label labelFor="form__add-new--pic">Picture</label><input id="form__add-new--pic" type="text" autofocus>
-              <label labelFor="form__add-new--name">Bottle Name</label><input id="form__add-new--name" type="text">
+              <label labelFor="form__add-new--name">Bottle Name</label><input id="form__add-new--name" type="text" required>
               <label labelFor="form__add-new--num-bottles">How many bottles?</label><input id="form__add-new--num-bottles" type="text">
-              <label labelFor="form__add-new--name">Bottle Name</label><input id="form__add-new--name" type="text">
               <label labelFor="form__add-new--wine-color">Color: </label>
-
               <select id="form__add-new--wine-color" name="color">
                 <option value="0" selected>Red</option>
                 <option value="1">White</option>
                 <option value="2">Rose</option>
               </select>
-
               <input id="form__add-new--wine-club" type="checkbox"><label labelFor="form__add-new--wine-club">Wine club member?</label>
               <input id="form__add-new--drink-now" type="checkbox"><label labelFor="form__add-new--drink-now">Ready to drink?</label>
-              
               <label labelFor="form__add-new--winery">Winery</label><input id="form__add-new--winery" type="text">
               <label labelFor="form__add-new--winery-loc">Winery Location</label><input id="form__add-new--winery-loc" type="text">
               <label labelFor="form__add-new--varietal">Varietal</label><input id="form__add-new--varietal" type="text">
-              <label labelFor="form__add-new--vintage">Vintage</label><input id="form__add-new--vintage" type="text">
-              <label labelFor="form__add-new--purch-loc">Where Purchased</label><input id="form__add-new--purch-loc" type="text">
-              
+              <label labelFor="form__add-new--vintage">Vintage</label><input id="form__add-new--vintage" type="number">
+              <label labelFor="form__add-new--purch-loc">Where Purchased</label><input id="form__add-new--purch-loc" type="text">              
               <label labelFor="form__add-new--purch-time">When Purchased</label><input id="form__add-new--purch-time" type="text">
-              <label labelFor="form__add-new--price">Price</label><input id="form__add-new--price" type="number">
-              
+              <label labelFor="form__add-new--price">Price</label><input id="form__add-new--price" type="number">              
               <label labelFor="form__add-new--notes">Notes</label><textarea id="form__add-new--notes" rows="5" columns="200"></textarea>
               <p><button id="form__add-new--submit" value="Add This Bottle">Add This Bottle</button></p>
             </fieldset>
-
           </form>
-
+          <form id="form__delete">
+              <fieldset>
+                <label labelFor="form__delete--name">Bottle name: </label>
+                <select id="form__delete--select" name="name">
+                </select>
+                <p><button id="form__delete--submit" value="Delete This Bottle">Delete This Bottle</button></p>
+              </fieldset>
+          </form>
 
         </main>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>

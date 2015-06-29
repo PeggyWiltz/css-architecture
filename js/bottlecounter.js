@@ -93,7 +93,26 @@ function getBottleHtml(bottle) {
   return textToReturn;
 }
 
+function getDeleteBottles(idx, bottleName) {
+  return '<option value="' + idx + '" selected>' + bottleName + '</option>';
+}
+
+  function collapseAddForm() {
+    $("#form__add-new").toggle();
+  }
+  
+    function collapseDeleteForm() {
+    $("#form__delete").toggle();
+  }
+
 $(function() {
+  //initially hide forms
+  $("#form__add-new").addClass("collapse");
+  $("#form__add-new--button").on("click", collapseAddForm);
+  
+  $("#form__delete").addClass("collapse");
+  $("#form__delete--button").on("click", collapseDeleteForm);
+    
   var frmPic = $('#form__add-new--pic');
   var frmName =  $('#form__add-new--name');
   var frmNumBottles = $('#form__add-new--num-bottles');
@@ -104,10 +123,13 @@ $(function() {
     url: 'bottles.json',
     success: function(data) {
       var textToInsert = '';
+      var delBottlesText = '';
       $.each(data.bottles, function(idx, bottle) {
-      textToInsert += getBottleHtml(bottle);
+        textToInsert += getBottleHtml(bottle);
+        delBottlesText += getDeleteBottles(idx, bottle.name);
       });
       $('.bottle-container').append(textToInsert);
+      $('#form__delete--select').append(delBottlesText);
     },
     error: function() {
       alert('error loading bottles');

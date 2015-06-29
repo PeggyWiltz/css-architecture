@@ -6,6 +6,10 @@
   clear: both;
 }
 
+.collapse {
+  display: none;
+}
+
 .flex-container {
     display:flex;
     flex-direction: row;
