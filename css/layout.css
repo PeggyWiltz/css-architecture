@@ -2,6 +2,14 @@
   box-sizing: border-box;
 }
 
+.clear {
+  clear: both;
+}
+
+.collapse {
+  display: none;
+}
+
 .flex-container {
     display:flex;
     flex-direction: row;
@@ -61,6 +69,8 @@
 }
 
 .item__details--icon {
+  margin-left: .5em;
+  margin-right: .5em;
   display: inline;
 }-
 
@@ -76,6 +86,10 @@
   
 .who-is__person-detail {
   margin: .5em;
+}
+
+#form__add-new label {
+display: block;
 }
 
 @media only screen and (min-width: 30.1em) {

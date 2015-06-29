@@ -1,93 +1,170 @@
-// JavaScript source code
+Number.prototype.formatMoney = function(places, symbol, thousand, decimal) {
+  places = !isNaN(places = Math.abs(places)) ? places : 2;
+  symbol = symbol !== undefined ? symbol : "$";
+  thousand = thousand || ",";
+  decimal = decimal || ".";
+  var number = this, 
+  negative = number < 0 ? "-" : "",
+  i = parseInt(number = Math.abs(+number || 0).toFixed(places), 10) + "",
+  j = (j = i.length) > 3 ? j % 3 : 0;
+  return symbol + negative + (j ? i.substr(0, j) + thousand : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + thousand) + (places ? decimal + Math.abs(number - i).toFixed(places).slice(2) : "");
+};  //From http://www.josscrowcroft.com/2011/code/format-unformat-money-currency-javascript/
 
-function randomIntFromInterval(min, max) {
-    //Method found here: http://stackoverflow.com/questions/4959975/generate-random-value-between-two-numbers-in-javascript
-    return Math.floor(Math.random() * (max - min + 1) + min);
+function getColorClass(colorNum) {  
+  var colorClass = 'item__detail--red-wine';
+  switch(colorNum) {
+    case "1":
+      return 'item__detail--white-wine';
+      break;
+    case "2":
+      return 'item__detail--rose-wine';
+      break;   
+  }
+return colorClass;  
 }
 
-function setQuote () {
-    var quoteArray = [
-        {
-            "text": "Beer is made by men, wine by God.",
-            "author": "Martin Luther"
-        },
-        {
-            "text": "I cook with wine, sometimes I even add it to the food.",
-            "author": "W.C. Fields"
-        },
-        {
-            "text": "Either give me more wine or leave me alone.",
-            "author": "Rumi"
-        },
-        {
-            "text": "Wine is the most healthful and most hygienic of beverages.",
-            "author": "Louis Pasteur"
-        },
-        {
-            "text": "Age appears best in four things: old wood to burn, old wine to drink, old friends to trust and old authors to read.",
-            "author": "Francis Bacon"
-        },
-        {
-            "text": "What wine goes with Captain Crunch?",
-            "author": "George Carlin"
-        },
-        {
-            "text": "In wine, there's truth.",
-            "author": "Pliny the Elder"
-        },
-        {
-            "text": "I pray you, do not fall in love with me, for I am falser than vows made in wine.",
-            "author": "William Shakespeare"
-        },
-        {
-            "text": "Give me wine to wash me clean of the weather-stains of cares.",
-            "author": "Ralph Waldo Emerson"
-        },
-        {
-            "text": "If we sip the wine, we find dreams coming upon us out of the imminent night",
-            "author": "D.H. Lawrence"
-        },
-        {
-            "text": "Wine makes all things possible.",
-            "author": "George R.R. Martin"
-        },
-        {
-            "text": "They are not long, the days of wine and roses.",
-            "author": "Ernest Dowson"
-        },
-        {
-            "text": "A bottle of wine begs to be shared; I have never met a miserly wine lover.",
-            "author": "Clifton Fadiman"
-        },
-        {
-            "text": "Life's too short to drink cheap wine...",
-            "author": "Cliff Hakim"
-        }
-    ];
-    var numQuotes = quoteArray.length;
-    if (numQuotes > 0) {
-        var rand = randomIntFromInterval(0, numQuotes - 1);
-        var myQuote = quoteArray[rand];
-        var formattedQuote = '\"' + myQuote.text + '\"';
-        var formattedAuthor = '- ' + myQuote.author;
-        var quoteNode = document.getElementById("home").firstElementChild.firstElementChild.lastElementChild;
-        quoteNode.firstElementChild.firstChild.data = formattedQuote;
-        quoteNode.lastElementChild.firstChild.data = formattedAuthor;
-    }
-    return;
+function getWineClubMembership(isWineClub) {  
+  var clubClass = '';
+  if (isWineClub === "1") {
+    clubClass = 'icon-star-empty';
+  }
+  return clubClass;  
 }
 
-window.onload = function () {
+function getReadyToDrinkClass(isReadyToDrink) {
+  var readyToDrinkClass = "";
+  if (isReadyToDrink === "1") {
+    readyToDrinkClass = "icon-glass";
+  }
+  return readyToDrinkClass;
+}
 
-    var el = document.getElementById("header__quote-body");
-    if (el.addEventListener) {
-        el.addEventListener("mouseout", setQuote, false);
-    } else {
-        el.attachEvent('onmouseout', setQuote);
+function getBottleHtml(bottle) {
+  var textToReturn = '';
+
+  var wineColorClass = getColorClass(bottle.wineColor);
+  var wineClubClass = getWineClubMembership(bottle.wineClub);
+  var readyToDrinkClass = getReadyToDrinkClass(bottle.readyToDrink)
+
+  textToReturn += '<article class="item flex-item" id="bottle' + bottle.id + '">';
+  textToReturn += '<figure class="item__image">';
+  textToReturn += '<img src="' + bottle.pic + '" alt="" class="item__image--responsive" />';
+  textToReturn += '</figure>';
+  textToReturn += '<ul class="item__details">';
+  textToReturn += '<li class="item__detail--title">';
+  textToReturn += '<h3>' + bottle.name + '</h3>';
+  textToReturn += '</li>';
+  textToReturn += '<ul class="item__details--icons">';
+  textToReturn += '<li class="item__details--icon item__detail--icon-large">';
+  textToReturn += '<a class="item__details--icon-link" href="#">';
+  textToReturn += '<span class="">' + bottle.bottleCount + '</span>';
+  textToReturn += '</a>';
+  textToReturn += '</li>';
+  textToReturn += '<li class="item__details--icon item__detail--icon-large">';
+  textToReturn += '<a class="item__details--icon-link" href="#">';
+  textToReturn += '<span class="icon-droplet ' +  wineColorClass + '"></span>';
+  textToReturn += '</a>';
+  textToReturn += '</li>';
+  textToReturn += '<li class="item__details--icon item__detail--icon-large">';
+  textToReturn += '<a class="item__details--icon-link" href="#">';
+  textToReturn += '<span class="' + wineClubClass  + '"></span>';
+  textToReturn += '</a>';
+  textToReturn += '</li>';
+  textToReturn += '<li class="item__details--icon item__detail--icon-large">';
+  textToReturn += '<a class="item__details--icon-link" href="#">';
+  textToReturn += '<span class="' + readyToDrinkClass + '"></span>';
+  textToReturn += '</a>';
+  textToReturn += '</li>';
+  textToReturn += '</ul>';
+  textToReturn += '<li class="item__detail">' + bottle.winery + ', ' + bottle.wineryLoc + '</li>';
+  textToReturn += '<li class="item__detail item__detail--year">' + bottle.vintage + '</li>';
+  textToReturn += '<li class="item__detail">' + bottle.varietal + '</li>';
+  textToReturn += '<li class="item__detail">';
+  textToReturn += '<label>Purchased </label>';
+  textToReturn += '<label id="bottle1-purch-where">' + bottle.wherePurchased + ', </label>';
+  textToReturn += '<label id="bottle1-purch-when">' + bottle.whenPurchased + '</label>';
+  textToReturn += '</li>';
+  textToReturn += '<li class="item__detail">' + bottle.price.formatMoney() + '</li>';
+  textToReturn += '<li class="item__detail item__detail--description">' + bottle.notes;
+  textToReturn += '</li>';
+  textToReturn += '</ul>';
+  textToReturn += '</article>';
+
+  return textToReturn;
+}
+
+function getDeleteBottles(idx, bottleName) {
+  return '<option value="' + idx + '" selected>' + bottleName + '</option>';
+}
+
+  function collapseAddForm() {
+    $("#form__add-new").toggle();
+  }
+  
+    function collapseDeleteForm() {
+    $("#form__delete").toggle();
+  }
+
+$(function() {
+  //initially hide forms
+  $("#form__add-new").addClass("collapse");
+  $("#form__add-new--button").on("click", collapseAddForm);
+  
+  $("#form__delete").addClass("collapse");
+  $("#form__delete--button").on("click", collapseDeleteForm);
+    
+  var frmPic = $('#form__add-new--pic');
+  var frmName =  $('#form__add-new--name');
+  var frmNumBottles = $('#form__add-new--num-bottles');
+
+  $.ajax({
+    dataType: 'json',
+    type: 'GET',
+    url: 'bottles.json',
+    success: function(data) {
+      var textToInsert = '';
+      var delBottlesText = '';
+      $.each(data.bottles, function(idx, bottle) {
+        textToInsert += getBottleHtml(bottle);
+        delBottlesText += getDeleteBottles(idx, bottle.name);
+      });
+      $('.bottle-container').append(textToInsert);
+      $('#form__delete--select').append(delBottlesText);
+    },
+    error: function() {
+      alert('error loading bottles');
     }
+  });
 
-};
+  $('#add-new').on('click', function() {
+    var bottle = {
+      pic: frmPic.val(),
+      name: frmName.val(), 
+      bottleCount: frmNumBottles.val()
+      /* wineColor: "2",
+      wineClub: "0",
+      readyToDrink: "1",      
+      winery: "Balboa", 
+      wineryLoc: "Walla Walla, WA", 
+      varietal: "4% Viognier, 94% Syrah",
+      vintage: "2014",
+      wherePurchased: "At the winery",
+      whenPurchased: "April 2015",
+      price: 14.00,
+      notes: "Bought on a trip with Carrie and Chuck." */      
+    };
 
-
-
-
+    $.ajax({
+      dataType: 'json',
+      type: 'POST',
+      url: 'bottles.json',
+      data: bottle,
+      success: function(newBottle) {
+      $('.bottle-container').append( getBottleHtml(newBottle));
+      },
+        error: function() {
+        alert('error saving order');
+      }
+    });
+  });
+})
